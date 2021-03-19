@@ -1,5 +1,10 @@
 {{ define "main" }}
     <div class="tips">
-        {{ partial "partials/tip.html" (dict "icon" "lungs.svg" "title" "Breathe" "description" "Practice some deep breathing exercises.")}}
+        {{ partial "partials/tip.html" (dict "icon" "lungs.svg" "title" "Breathe" "description" "Practice some deep breathing exercises.") }}
+        {{ partial "partials/tip.html" (dict "icon" "exercise.svg" "title" "Exercise" "description" "Exercise is a great tool to reduce anxiety and stress.") }}
+        {{ partial "partials/tip.html" (dict "icon" "friends.svg" "title" "Friends" "description" "Talk to friends about how you are feeling.") }}
+        {{ partial "partials/tip.html" (dict "icon" "happy.svg" "title" "Happy" "description" "Take part in something that makes you happy.") }}
+        {{ partial "partials/tip.html" (dict "icon" "food.svg" "title" "Food" "description" "Make sure you are eating a well balanced diet.") }}
+        {{ partial "partials/tip.html" (dict "icon" "relax.svg" "title" "Relax" "description" "Take time out of your day to relax.") }}
     </div>
 {{ end }}

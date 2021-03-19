@@ -4,7 +4,7 @@
 
 html {
   font-family: 'Roboto Slab', serif;
-  @apply bg-indigo-900 text-white font-light;
+  @apply bg-indigo-900 text-white;
 }
 
 svg {
@@ -20,18 +20,31 @@ a {
 }
 
 footer {
-  @apply flex justify-center items-center text-center text-xs p-12;
+  @apply flex justify-center items-center text-center text-xs p-12 font-light;
 }
 
 .tip {
-  @apply relative flex justify-center items-center shadow bg-blue-800 border border-blue-700 rounded-lg transition duration-300 ease-in-out cursor-pointer;
+  @apply relative flex justify-center items-center shadow bg-indigo-700 rounded-lg transition duration-300 ease-in-out cursor-pointer;
 
   &:hover, &:focus {
-    @apply bg-blue-700 border-blue-600 shadow-lg;
+    @apply bg-green-700 shadow-lg;
   }
 
   &s {
-    @apply grid grid-cols-4 p-6;
+    @apply grid p-6 gap-6;
+
+    @media (min-width: 32em) {
+      @apply grid-cols-2;
+    }
+
+    @media (min-width: 64em) {
+      @apply grid-cols-3;
+    }
+
+    @media (min-width: 84em) {
+      @apply grid-cols-4;
+    }
+
   }
 
   &__icon {
@@ -39,7 +52,7 @@ footer {
   }
 
   &__content {
-    @apply flex flex-col justify-start items-start m-6 ml-0;
+    @apply flex flex-col justify-start items-start m-6 ml-0 flex-grow;
   }
 
   &__title {
@@ -47,18 +60,14 @@ footer {
   }
 
   &__description {
-    @apply block text-sm;
+    @apply block text-sm font-light;
   }
 
   &__checked {
-    @apply bg-green-800 border-green-700;
-
-    &:hover, &:focus {
-      @apply bg-green-800 border-green-700;
-    }
+    @apply bg-green-800;
   }
 
   &__check {
-    @apply absolute top-0 right-0 text-green-100 w-5 h-5 mt-3 mr-3 transition duration-300 ease-in-out;
+    @apply absolute top-0 right-0 w-5 h-5 mt-3 mr-3 transition duration-300 ease-in-out;
   }
 }
