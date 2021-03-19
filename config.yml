@@ -1,0 +1,7 @@
+baseURL: "https://dailyhealth.app/"
+languageCode: "en-us"
+title: "Nick Frost"
+canonifyURLs: true
+disableKinds: ["taxonomy", "taxonomyTerm"]
+enableRobotsTXT: true
+enableGitInfo: true
