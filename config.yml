@@ -1,6 +1,6 @@
 baseURL: "https://dailyhealth.app/"
 languageCode: "en-us"
-title: "Nick Frost"
+title: "dailyhealth.app"
 canonifyURLs: true
 disableKinds: ["taxonomy", "taxonomyTerm"]
 enableRobotsTXT: true

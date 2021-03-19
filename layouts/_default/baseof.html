@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="author" content="Nick Frost"/>
+    <meta name="author" content="Digital Masterpiece LLC."/>
     <meta name="description" content="{{ .Description }}"/>
 
-    {{ $favicon := resources.Get "images/heart.svg" | minify | fingerprint }}
-    <link rel="icon" type="image/svg+xml" href="{{ $favicon.Permalink }}">
+    <link rel="icon" type="image/svg+xml" href="{{ (resources.Get "images/heart.svg" | minify | fingerprint).Permalink }}">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
 

@@ -1,3 +1,5 @@
 {{ define "main" }}
-    {{ .Content }}
+    <div class="tips">
+        {{ partial "partials/tip.html" (dict "icon" "lungs.svg" "title" "Breathe" "description" "Practice some deep breathing exercises.")}}
+    </div>
 {{ end }}
