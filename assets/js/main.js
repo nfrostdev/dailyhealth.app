@@ -21,7 +21,7 @@ function toggleCheckedTip(id) {
 
 function checkLocalstorage() {
     document.querySelectorAll('.tip').forEach(tip => {
-        const id = tip.getAttribute('id');
+        const id = tip.id;
         if (localStorage.getItem(dateString + id) === 'checked') {
             document.getElementById(id + '__input').checked = true;
             toggleCheckedTip(id);
@@ -29,18 +29,20 @@ function checkLocalstorage() {
     })
 }
 
-checkLocalstorage();
+window.addEventListener('load', function () {
+    checkLocalstorage();
 
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker
-        .register('/sw.js', {scope: '/'})
-        .then(function (registration) {
-            console.log('Service Worker Registered');
-        });
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker
+            .register('/sw.js', {scope: '/'})
+            .then(function (registration) {
+                console.log('Service Worker Registered');
+            });
 
-    navigator.serviceWorker
-        .ready
-        .then(function (registration) {
-            console.log('Service Worker Ready');
-        });
-}
+        navigator.serviceWorker
+            .ready
+            .then(function (registration) {
+                console.log('Service Worker Ready');
+            });
+    }
+})
