@@ -10,6 +10,13 @@
       "type": "image/png"
     }
   ],
+  "screenshots" : [
+    {
+      "src": "/images/screenshot.png",
+      "sizes": "752x1336",
+      "type": "image/png"
+    }
+  ],
   "theme_color": "#4338CA",
   "background_color": "#374151",
   "display": "fullscreen",
