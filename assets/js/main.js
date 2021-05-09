@@ -19,19 +19,20 @@ function toggleCheckedTip(id) {
     }
 }
 
-function checkLocalstorage() {
-    document.querySelectorAll('.tip').forEach(tip => {
-        const id = tip.id;
-        if (localStorage.getItem(dateString + id) === 'checked') {
-            document.getElementById(id + '__input').checked = true;
-            toggleCheckedTip(id);
-        }
+async function checkLocalstorage() {
+    return new Promise(resolve => {
+        document.querySelectorAll('.tip').forEach(tip => {
+            const id = tip.id;
+            if (localStorage.getItem(dateString + id) === 'checked') {
+                document.getElementById(id + '__input').checked = true;
+                toggleCheckedTip(id);
+            }
+        });
+        resolve()
     })
 }
 
-window.addEventListener('load', function () {
-    checkLocalstorage();
-
+function registerServiceWorker() {
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker
             .register('/sw.js', {scope: '/'})
@@ -45,4 +46,8 @@ window.addEventListener('load', function () {
                 console.log('Service Worker Ready');
             });
     }
+}
+
+window.addEventListener('load', function () {
+    checkLocalstorage().then(registerServiceWorker);
 })
