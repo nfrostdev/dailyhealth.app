@@ -7,8 +7,8 @@
     <meta name="description" content="{{ .Description }}"/>
 
     <link rel="icon" type="image/svg+xml" href="{{ (resources.Get "images/heart.svg" | minify | fingerprint).Permalink }}">
-
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="manifest" href="https://dailyhealth.app/manifest.json">
 
     <title>{{ .Title }} | {{ .Site.Title }}</title>
 
