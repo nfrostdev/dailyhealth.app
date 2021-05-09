@@ -1,4 +1,4 @@
-{{ $title := print .Title (print "|" .Site.Title) }}
+{{ $title := print .Title (print " | " .Site.Title) }}
 {{ $screenshot := resources.Get "/screenshots/1.png" | minify }}
 
 <!DOCTYPE html>
