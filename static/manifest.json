@@ -10,10 +10,10 @@
       "type": "image/png"
     }
   ],
-  "screenshots" : [
+  "screenshots": [
     {
-      "src": "/images/screenshot.png",
-      "sizes": "752x1336",
+      "src": "/screenshots/1.min.png",
+      "sizes": "1280x800",
       "type": "image/png"
     }
   ],

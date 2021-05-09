@@ -1,16 +1,33 @@
+{{ $title := print .Title (print "|" .Site.Title) }}
+{{ $screenshot := resources.Get "/screenshots/1.png" | minify }}
+
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}" class="overflow-x-hidden">
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="Digital Masterpiece LLC."/>
+
+    <title>{{ $title }}</title>
+    <meta name="title" content="{{ $title }}">
     <meta name="description" content="{{ .Description }}"/>
 
-    <link rel="icon" type="image/svg+xml" href="{{ (resources.Get "images/heart.svg" | minify | fingerprint).Permalink }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ .Site.BaseURL }}">
+    <meta property="og:title" content="{{ $title }}">
+    <meta property="og:description" content="{{ .Description }}">
+    <meta property="og:image" content="{{ $screenshot.Permalink }}">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{ .Site.BaseURL }}">
+    <meta property="twitter:title" content="{{ $title }}">
+    <meta property="twitter:description" content="{{ .Description }}">
+    <meta property="twitter:image" content="{{ $screenshot.Permalink }}">
+
+    <link rel="icon" type="image/svg+xml"
+          href="{{ (resources.Get "images/heart.svg" | minify | fingerprint).Permalink }}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="manifest" href="https://dailyhealth.app/manifest.json">
-
-    <title>{{ .Title }} | {{ .Site.Title }}</title>
 
     {{ $options := dict "targetPath" "css/main.css" }}
     {{ $scss := resources.Get "scss/main.scss" | toCSS $options }}
