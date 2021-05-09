@@ -6,7 +6,8 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="author" content="Digital Masterpiece LLC."/>
+    <meta name="author" content="Nick Frost | https://www.nfrost.dev"/>
+    <meta name="theme-color" content="#4338CA">
 
     <title>{{ $title }}</title>
     <meta name="title" content="{{ $title }}">
@@ -28,6 +29,9 @@
           href="{{ (resources.Get "images/heart.svg" | minify | fingerprint).Permalink }}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="manifest" href="https://dailyhealth.app/manifest.json">
+
+    <link rel="apple-touch-icon"
+          href="{{ (resources.Get "icons/apple-touch-icon.png" | minify | fingerprint).Permalink }}">
 
     {{ $options := dict "targetPath" "css/main.css" }}
     {{ $scss := resources.Get "scss/main.scss" | toCSS $options }}
