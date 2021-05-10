@@ -20,14 +20,30 @@ a {
 }
 
 .footer {
-  @apply flex flex-col justify-center items-center text-center p-12 font-light text-sm;
+  @apply flex flex-col justify-center items-center text-center p-12 font-light text-xs;
 
   &__made-by {
-    @apply mb-4;
+    @apply mb-1 text-sm;
   }
 
-  &__icons {
-    @apply text-xs;
+  &__source {
+    @apply mb-4;
+
+    &__a {
+      @apply flex justify-center items-center;
+    }
+
+    &__svg {
+      @apply h-4 w-4 ml-1;
+    }
+  }
+
+  &__inspired {
+    @apply mb-1;
+  }
+
+  &__license {
+    @apply mb-2;
   }
 }
 
