@@ -19,8 +19,16 @@ a {
   }
 }
 
-footer {
-  @apply flex justify-center items-center text-center text-xs p-12 font-light;
+.footer {
+  @apply flex flex-col justify-center items-center text-center p-12 font-light text-sm;
+
+  &__made-by {
+    @apply mb-4;
+  }
+
+  &__icons {
+    @apply text-xs;
+  }
 }
 
 h1 {
